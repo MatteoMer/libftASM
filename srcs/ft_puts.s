@@ -2,6 +2,10 @@
 %define STDOUT 1
 %define WRITE 4
 
+section .data
+	nl:
+		.string db 10
+
 section .text
 	global _ft_puts
 	extern _ft_strlen
@@ -9,7 +13,7 @@ section .text
 _ft_puts:
 	push rbp
 	mov rbp, rsp
-	and rbp, -16
+	and rsp, -16
 	push rdi
 	call _ft_strlen
 	pop rdi
@@ -18,5 +22,12 @@ _ft_puts:
 	mov rdi, STDOUT
 	mov rax, MACHO_SYSCALL(WRITE)
 	syscall
+
+	mov rdx, 1
+	lea rsi, [rel nl.string]
+	mov rdi, STDOUT
+	mov rax, MACHO_SYSCALL(WRITE)
+	syscall
+
 	leave
 	ret

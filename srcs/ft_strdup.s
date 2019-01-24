@@ -7,7 +7,7 @@ section .text
 _ft_strdup:
 	push rbp
 	mov rbp, rsp
-	and rbp, -16
+	and rsp, -16
 	push rdi
 	call _ft_strlen
 	push rax

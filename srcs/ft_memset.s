@@ -4,7 +4,7 @@ section .text
 _ft_memset:
 	push rbp
 	mov rbp, rsp
-	and rbp, -16
+	and rsp, -16
 	push rdi
 	mov rcx, rdx
 	mov rax, rsi

@@ -6,7 +6,7 @@
 #    By: mmervoye <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/23 15:39:46 by mmervoye          #+#    #+#              #
-#    Updated: 2019/01/24 14:23:06 by mmervoye         ###   ########.fr        #
+#    Updated: 2019/01/24 14:57:22 by mmervoye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRCS = srcs/ft_bzero.s\
 	   srcs/ft_puts.s\
 	   srcs/ft_memset.s\
 	   srcs/ft_memcpy.s\
-	   srcs/ft_strdup.s
+	   srcs/ft_strdup.s\
+	   srcs/ft_cat.s
 OBJS = $(SRCS:%.s=%.o)
 AS = nasm
 ASFLAGS = -f macho64

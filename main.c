@@ -6,7 +6,7 @@
 /*   By: mmervoye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 16:06:53 by mmervoye          #+#    #+#             */
-/*   Updated: 2019/01/24 14:29:18 by mmervoye         ###   ########.fr       */
+/*   Updated: 2019/01/24 16:36:51 by mmervoye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ extern int					ft_puts(char *str);
 extern void					*ft_memset(char *str, int c, size_t len);
 extern void					*ft_memcpy(char *src, char *dest, size_t len);
 extern char					*ft_strdup(char *dest);
+extern void					ft_cat(int fd);
 
 void						ft_bzero_test(void)
 {
@@ -83,7 +84,7 @@ void					ft_to_tests(void)
 
 void					ft_strlen_test(void)
 {
-	printf("%zu\n", ft_strlen("coucou"));
+	printf("%d\n", ft_puts("Montpellier, first mentioned in a document of 985, was founded under a local feudal dynasty, the Guilhem, who combined two hamlets and built a castle and walls around the united settlement. The two surviving towers of the city walls, the Tour des Pins and the Tour de la Babotte, were built later, around the year 1200."));
 }
 
 void					ft_memset_test(void)
@@ -113,16 +114,22 @@ void					ft_strdup_test(void)
 	free(ptr);
 }
 
+void					ft_cat_test(void)
+{
+	ft_cat(0);
+}
+
 int						main(void)
 {
 //	ft_bzero_test();
 //	ft_strcat_test();
 //	ft_is_tests();
 //	ft_to_tests();
-//	ft_strlen_test();
-//	ft_puts("test yey\n");
+	ft_strlen_test();
+//	ft_puts("test yey");
 //	ft_memset_test();
 //	ft_memcpy_test();
-	ft_strdup_test();
+//	ft_strdup_test();
+//	ft_cat_test();
 	return (0);
 }

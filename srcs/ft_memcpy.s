@@ -4,7 +4,7 @@ section .text
 _ft_memcpy:
 	push rbp
 	mov rbp, rsp
-	and rbp, -16
+	and rsp, -16
 	push rdi
 	mov rcx, rdx
 	rep movsb

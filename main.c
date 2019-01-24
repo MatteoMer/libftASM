@@ -6,7 +6,7 @@
 /*   By: mmervoye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 16:06:53 by mmervoye          #+#    #+#             */
-/*   Updated: 2019/01/23 18:53:12 by mmervoye         ###   ########.fr       */
+/*   Updated: 2019/01/24 14:29:18 by mmervoye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,18 @@
 #define SIZE 8
 extern void					ft_bzero(void *s, size_t size);
 extern char					*ft_strcat(char *s1, char *s2);
+extern int					ft_islower(char c);
+extern int					ft_isupper(char c);
+extern int					ft_isalpha(char c);
+extern int					ft_isdigit(char c);
+extern int					ft_isalnum(char c);
+extern int					ft_toupper(char c);
+extern int					ft_tolower(char c);
+extern size_t				ft_strlen(char *str);
+extern int					ft_puts(char *str);
+extern void					*ft_memset(char *str, int c, size_t len);
+extern void					*ft_memcpy(char *src, char *dest, size_t len);
+extern char					*ft_strdup(char *dest);
 
 void						ft_bzero_test(void)
 {
@@ -47,9 +59,70 @@ void					ft_strcat_test(void)
 	printf("%s ret: %s\n", s1, ptr);
 }
 
+void					ft_is_tests(void)
+{
+	char			a;
+	char			b;
+
+	a = 'A';
+	b = '~';
+	if (ft_isalnum(a))
+		printf("yes\n");
+	if (ft_isalnum(b))
+		printf("not yes\n");
+}
+
+void					ft_to_tests(void)
+{
+	char		a;
+
+	a = 'A';
+	a = ft_tolower(a);
+	printf(">>%c<<\n", a);
+}
+
+void					ft_strlen_test(void)
+{
+	printf("%zu\n", ft_strlen("coucou"));
+}
+
+void					ft_memset_test(void)
+{
+	char			str[8] = "coucou";
+
+	ft_memset(str, 'a', 5);
+	printf("%s\n", str);
+}
+
+void					ft_memcpy_test(void)
+{
+	char		str[8] = "coucou";
+	char		str2[8] = "COUCOU";
+
+	ft_memcpy(str, str2, 6);
+	printf("%s\n", str);
+}
+
+void					ft_strdup_test(void)
+{
+	char		str[7] = "coucou";
+	char		*ptr;
+
+	ptr = ft_strdup("salut");
+	printf("%s\n", ptr);
+	free(ptr);
+}
+
 int						main(void)
 {
 //	ft_bzero_test();
-	ft_strcat_test();
+//	ft_strcat_test();
+//	ft_is_tests();
+//	ft_to_tests();
+//	ft_strlen_test();
+//	ft_puts("test yey\n");
+//	ft_memset_test();
+//	ft_memcpy_test();
+	ft_strdup_test();
 	return (0);
 }
